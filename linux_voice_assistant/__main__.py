@@ -511,7 +511,7 @@ def process_audio(state: ServerState, mic, block_size: int):
                         elif isinstance(wake_word, OpenWakeWord):
                             for oww_input in oww_inputs:
                                 for prob in wake_word.process_streaming(oww_input):
-                                    if prob > 0.5:
+                                    if prob > 0.995:
                                         activated = True
 
                         if activated and not state.muted:
